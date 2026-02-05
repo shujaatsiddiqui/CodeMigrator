@@ -9,6 +9,7 @@ When migrating code or scaffolding a new project, always read these files first:
 1. `CodeMigrator/Templates/CleanArchitectureReference.md` - Full architecture spec, folder structure, layer responsibilities, and dependency rules.
 2. `CodeMigrator/Templates/NamingConventions.md` - Naming standards for classes, functions, triggers, DTOs, and files.
 3. `CodeMigrator/Templates/CodeTemplates.md` - Copy-paste-ready code templates for every layer: triggers, services, repositories, validators, DTOs, GraphQL, OpenAPI, and audit fields.
+4. `CodeMigrator/Templates/HttpMethodsReference.md` - HTTP method conventions for API design: GET, POST, PUT, PATCH, DELETE route patterns, request/response rules, and when to use each method.
 
 ## Migration Workflow
 
