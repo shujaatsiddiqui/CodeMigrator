@@ -1,0 +1,40 @@
+## .NET
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+*.user
+*.suo
+*.cache
+*.docstates
+
+## NuGet
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+
+## Visual Studio / Rider
+.vs/
+.idea/
+*.sln.iml
+*.resharper
+_ReSharper*/
+*.DotSettings.user
+
+## User-specific files
+*.rsuser
+*.userosscache
+*.sln.docstates
+
+## OS files
+.DS_Store
+Thumbs.db
