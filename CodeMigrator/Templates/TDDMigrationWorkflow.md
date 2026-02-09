@@ -169,3 +169,118 @@ Without breaking tests, refactor code to:
 | 3 | Implement Code (GREEN) | Minimal code to pass all tests |
 | 4 | Refactor | Clean architecture without breaking tests |
 | 5 | Validate & Document | Traceability matrix + coverage report |
+
+---
+
+## Post-Conversion Checklist
+
+Use this checklist after migration to verify nothing is missing.
+
+### Project Structure
+- [ ] Solution file created (.sln)
+- [ ] Function App project created (entry point)
+- [ ] Library project created (business logic)
+- [ ] Common project created (shared utilities)
+- [ ] Test project created
+- [ ] All projects reference correct dependencies
+- [ ] Target framework is correct (.NET 8/9)
+
+### Domain Layer
+- [ ] All entities migrated to Domain/Entities
+- [ ] Entity properties match legacy model
+- [ ] Repository interfaces defined in Domain/Interfaces
+- [ ] Domain events created (if applicable)
+
+### Application Layer
+- [ ] Service interfaces created in Application/Interfaces
+- [ ] Service implementations in Application/Services
+- [ ] All business rules preserved
+- [ ] Request DTOs created in Application/DTOs
+- [ ] Response DTOs created in Application/DTOs
+- [ ] Validators created in Application/Validators
+- [ ] All validation rules migrated
+
+### Infrastructure Layer
+- [ ] Repository implementations in Infrastructure/Repositories
+- [ ] DbContext configured correctly
+- [ ] Entity configurations/mappings defined
+- [ ] External service clients implemented (if applicable)
+- [ ] GraphQL queries/mutations created (if applicable)
+
+### Function Triggers (Entry Points)
+- [ ] All endpoints migrated to HTTP triggers
+- [ ] Route patterns match legacy API
+- [ ] HTTP methods correct (GET, POST, PUT, DELETE)
+- [ ] Authorization levels configured
+- [ ] Request/response handling implemented
+- [ ] Error handling in place
+
+### OpenAPI/Swagger Documentation
+- [ ] OpenAPI package installed
+- [ ] `[OpenApiOperation]` on all triggers
+- [ ] `[OpenApiParameter]` for path/query parameters
+- [ ] `[OpenApiRequestBody]` for POST/PUT endpoints
+- [ ] `[OpenApiResponseWithBody]` for success responses
+- [ ] `[OpenApiResponseWithoutBody]` for error responses
+- [ ] Summary and Description provided
+- [ ] Tags assigned for grouping
+
+### Dependency Injection
+- [ ] DbContext registered
+- [ ] Repositories registered
+- [ ] Services registered
+- [ ] Validators registered
+- [ ] Scoped/Singleton lifetimes correct
+
+### Tests
+- [ ] Unit tests for all services
+- [ ] Unit tests for all validators
+- [ ] Integration tests for workflows
+- [ ] Edge case tests (null, empty, boundary)
+- [ ] Error handling tests
+- [ ] All tests passing
+- [ ] Test naming follows convention
+
+### Business Rules
+- [ ] All validation rules preserved
+- [ ] All business logic migrated
+- [ ] Error messages match expected behavior
+- [ ] Side effects documented and tested
+
+### Configuration
+- [ ] local.settings.json configured
+- [ ] Connection strings defined
+- [ ] Application settings migrated
+- [ ] Environment-specific configs handled
+
+### Documentation
+- [ ] ANALYSIS.md created (Phase 1 output)
+- [ ] TRACEABILITY.md created (Phase 5 output)
+- [ ] All endpoints documented
+- [ ] Business rules documented
+- [ ] Test coverage documented
+
+### Final Verification
+- [ ] Solution builds without errors
+- [ ] Solution builds without warnings (or warnings documented)
+- [ ] All tests pass
+- [ ] Function app starts locally
+- [ ] Swagger UI accessible
+- [ ] All endpoints callable via Swagger
+- [ ] Manual smoke test passed
+
+---
+
+## Checklist Summary
+
+```
+Total Items: ___
+Completed:   ___
+Remaining:   ___
+Completion:  ___%
+```
+
+Sign-off:
+- [ ] Developer verified
+- [ ] Code reviewed
+- [ ] Ready for deployment
